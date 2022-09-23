@@ -1,0 +1,75 @@
+public class herencia {
+    public static void main(String[] args) {
+        Cliente cliente = new Cliente();
+        cliente.setNombre("Paca Garte");
+        cliente.setEdad(102);
+        cliente.setTelefonoMovil(6820093);
+        cliente.setCredito(200);
+
+        Empleado empleado = new Empleado();
+        empleado.setNombre("Kevin Hueles");
+        empleado.setEdad(104);
+        empleado.setTelefonoMovil(6820098);
+        empleado.setSalario(2500);
+
+        System.out.println("Cliente Nombre: " +  cliente.getNombre());
+        System.out.println("Cliente Edad: " + cliente.getEdad());
+        System.out.println("Cliente Teléfono Móvil: " + cliente.getTelefonoMovil());
+        System.out.println("Cliente Crédito: " + cliente.getCredito());
+
+        System.out.println("Empleado Nombre: " + empleado.getNombre());
+        System.out.println("Empleado Edad: " + empleado.getEdad());
+        System.out.println("Empleado Teléfono Móvil: " + empleado.getTelefonoMovil());
+        System.out.println("Empleado Salario: " +  empleado.getSalario());
+
+    }
+}
+
+class Persona {
+    String nombre;
+    int edad;
+    int telefonomovil;
+
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+    public String getNombre(){
+        return nombre;
+    }
+
+    public void setEdad(int edad){
+        this.edad = edad;
+    }
+
+    public int  getEdad(){
+        return edad;
+    }
+
+    public void setTelefonoMovil (int telefonomovil) {
+        this.telefonomovil = telefonomovil;
+    }
+    public int getTelefonoMovil() {
+        return telefonomovil;
+    }
+
+}
+class Cliente extends Persona {
+    private float credito;
+
+    public void setCredito(float credito){
+        this.credito = credito;
+    }
+    public float getCredito(){
+        return credito;
+    }
+}
+class Empleado extends Persona {
+    private float salario;
+
+    public void setSalario(float salario){
+        this.salario = salario;
+    }
+    public float getSalario(){
+        return salario;
+    }
+}
